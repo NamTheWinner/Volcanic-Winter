@@ -17,14 +17,14 @@
 		"uniques": ["[+2] to Fertility for Map Generation",
             "Considered [Desirable] when determining start locations <on water maps>",
             "Every [60] tiles with this terrain will receive a major deposit of a strategic resource."]
-	},/*
+	},
 	{
 		"name": "Grassland",
 		"type": "Land",
 		"food": 2,
 		"movementCost": 1,
         "RGB": [0, 163, 0],
-        "uniques": ["Occurs at temperature between [0.7] and [1] and humidity between [0] and [1]",
+        "uniques": ["Occurs at temperature between [0.9] and [1] and humidity between [0] and [1]",
             "[+1] to Fertility for Map Generation",
             "A Region is formed with at least [30]% [Grassland] tiles, with priority [7]",
             "A Region can not contain more [Plains] tiles than [Grassland] tiles",
@@ -35,7 +35,7 @@
             "Considered [Food] when determining start locations <in [Grassland] Regions>",
             "Considered [Food] when determining start locations <in [Hybrid] Regions>",
             "Every [33] tiles with this terrain will receive a major deposit of a strategic resource."]
-    },*/
+    },
 	{
 		"name": "Plains",
 		"type": "Land",
@@ -43,8 +43,8 @@
 		"production": 1,
 		"movementCost": 1,
 		"RGB": [153, 180, 51],
-		"uniques": ["Occurs at temperature between [0.6] and [0.8] and humidity between [0.8] and [1]",
-			"Occurs at temperature between [0.7] and [1] and humidity between [0] and [0.8]",
+		"uniques": ["Occurs at temperature between [0.9] and [1] and humidity between [0] and [1]",
+			"[+1] to Fertility for Map Generation",
             "A Region is formed with at least [30]% [Plains] tiles, with priority [6]",
             "A Region can not contain more [Grassland] tiles than [Plains] tiles",
             "Considered [Desirable] when determining start locations",
@@ -60,10 +60,7 @@
 		"food": 1,
 		"movementCost": 1,
 		"RGB": [30, 113, 69],
-		"uniques": ["Occurs at temperature between [0.2] and [0.4] and humidity between [0] and [1]",
-			"Occurs at temperature between [0.3] and [0.8] and humidity between [0] and [0.8]",
-			"Occurs at temperature between [0.5] and [0.9] and humidity between [0] and [0.6]",
-			"Occurs at temperature between [0.7] and [1] and humidity between [0] and [0.4]",
+		"uniques": ["Occurs at temperature between [0.7] and [1] and humidity between [0] and [1]",
             "[+2] to Fertility for Map Generation",
             "A Region is formed with at least [30]% [Tundra] tiles and [Snow] tiles, with priority [1]",
             "Considered [Food] when determining start locations <in [Tundra] Regions>",
@@ -71,6 +68,19 @@
             "Becomes [Plains] when adjacent to [River]",
             "Every [16] tiles with this terrain will receive a major deposit of a strategic resource.",
 			"Occurs in groups around high elevations <in tiles without [Tundra]>"]
+	},
+	{
+		"name": "Snow",
+		"type": "Land",
+		"movementCost": 1,
+		"RGB": [230, 238, 255], //Darker229, 229, 255
+		"uniques": [
+            "Occurs at temperature between [-1] and [0.7] and humidity between [0] and [1]",
+			"Occurs at temperature between [0.7] and [1] and humidity between [0] and [0.5]",
+            "Becomes [Tundra] when adjacent to [River]",
+			"[+3] to Fertility for Map Generation",
+            "Every [17] tiles with this terrain will receive a major deposit of a strategic resource.",
+            "Never receives any resources <in [Hill] tiles>"]
 	},
 	{
 		"name": "Lakes",
@@ -94,18 +104,6 @@
             "Units ending their turn on this terrain take [50] damage",
             "Always Fertility [-2] for Map Generation",
             "Considered [Undesirable] when determining start locations"]
-	},
-	{
-		"name": "Snow",
-		"type": "Land",
-		"movementCost": 1,
-		"RGB": [230, 238, 255], //Darker229, 229, 255
-		"uniques": [
-            "Occurs at temperature between [-1] and [0.6] and humidity between [0] and [1]",
-            "Becomes [Tundra] when adjacent to [River]",
-			"[+3] to Fertility for Map Generation",
-            "Every [17] tiles with this terrain will receive a major deposit of a strategic resource.",
-            "Never receives any resources <in [Hill] tiles>"]
 	},
 
 	// Terrain features
@@ -139,7 +137,7 @@
 		"overrideStats": true,
 		"unbuildable": true,
 		"defenceBonus": 0.25,
-		"occursOn": ["Tundra","Hill"],
+		"occursOn": ["Tundra","Hill","Plains"],
 		"uniques": ["Rough terrain", "Vegetation",
 					"Provides a one-time Production bonus to the closest city when cut down",
 					"Blocks line-of-sight from tiles at same elevation",
@@ -162,7 +160,7 @@
 		"overrideStats": true,
 		"unbuildable": true,
 		"defenceBonus": 0.25,
-		"occursOn": [],
+		"occursOn": ["Plains"],
 		"uniques": [
 			"Rough terrain", "Vegetation",
 			"Blocks line-of-sight from tiles at same elevation",
